@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ski with Chuck | Ski Instruction at Big Bear</title>
+<meta name="description" content="Ski instruction with Chuck Marvin, PSIA member and Ski & Ride School Supervisor at Big Bear Mountain Resort. Lessons in English and Spanish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1f33; --navy-2:#132d48; --ice:#e8f2fa; --snow:#ffffff;
+    --accent:#2b8fd6; --accent-2:#1a6fae; --warm:#f2a541;
+    --text:#1d2a36; --muted:#5b6b7a; --line:#dbe6ef;
+    --radius:14px; --shadow:0 10px 30px rgba(11,31,51,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--snow);line-height:1.6}
+  a{color:var(--accent-2)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Nav ---------- */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+  header.scrolled{background:rgba(11,31,51,.96);box-shadow:0 2px 14px rgba(0,0,0,.2)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{color:#fff;font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
+  .logo svg{width:26px;height:26px}
+  .nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+  .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:500;font-size:.95rem;transition:color .2s;position:relative}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--warm);border-radius:2px}
+  .nav-links .btn-nav{background:var(--warm);color:var(--navy);padding:8px 16px;border-radius:999px;font-weight:700}
+  .nav-links .btn-nav:hover{color:var(--navy);filter:brightness(1.05)}
+  .nav-links .btn-nav.active::after{display:none}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px;position:relative}
+  .menu-toggle span{position:absolute;left:8px;right:8px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+  .menu-toggle span:nth-child(1){top:13px}.menu-toggle span:nth-child(2){top:19px}.menu-toggle span:nth-child(3){top:25px}
+  .menu-toggle.open span:nth-child(1){top:19px;transform:rotate(45deg)}
+  .menu-toggle.open span:nth-child(2){opacity:0}
+  .menu-toggle.open span:nth-child(3){top:19px;transform:rotate(-45deg)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;
+    background:linear-gradient(180deg,#0b1f33 0%,#1b4a73 55%,#5b9bd0 100%)}
+  .hero svg.mtns{position:absolute;bottom:0;left:0;width:100%;height:55%;}
+  .hero .stars{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20% 15%,#fff8,transparent),radial-gradient(1px 1px at 70% 22%,#fff9,transparent),radial-gradient(1.5px 1.5px at 85% 10%,#fff7,transparent),radial-gradient(1px 1px at 40% 8%,#fff8,transparent),radial-gradient(1px 1px at 55% 30%,#fff6,transparent)}
+  .hero-content{position:relative;z-index:2;padding-top:40px;max-width:640px}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--warm);margin-bottom:14px}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.08;font-weight:800;margin-bottom:18px}
+  .hero p{font-size:1.15rem;color:rgba(255,255,255,.88);margin-bottom:30px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--warm);color:var(--navy);box-shadow:0 8px 22px rgba(242,165,65,.35)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.7);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.12)}
+  .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;opacity:.7;animation:bob 2s infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  /* ---------- Sections ---------- */
+  section{padding:90px 0}
+  .alt{background:var(--ice)}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.4rem);color:var(--navy);font-weight:800;margin-bottom:10px}
+  .sec-head p{color:var(--muted)}
+  .bar{width:56px;height:4px;background:var(--warm);border-radius:4px;margin:0 auto 16px}
+
+  /* About */
+  .about{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center}
+  .avatar{width:100%;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--navy));display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+  .avatar svg{width:55%;height:55%}
+  .about h3{font-size:1.5rem;color:var(--navy);margin-bottom:12px}
+  .about p{margin-bottom:14px;color:var(--text)}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--navy-2)}
+
+  /* Lessons / tabs */
+  .tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+  .tab{border:2px solid var(--line);background:#fff;color:var(--navy);padding:10px 20px;border-radius:999px;font-weight:700;cursor:pointer;font-family:inherit;font-size:.95rem;display:flex;align-items:center;gap:8px;transition:.2s}
+  .tab .dot{width:12px;height:12px;display:inline-block}
+  .tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .panel{display:none;animation:fade .4s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .25s}
+  .card:hover{transform:translateY(-4px)}
+  .card .num{font-size:.8rem;font-weight:800;color:var(--accent);letter-spacing:1px;text-transform:uppercase}
+  .card h4{font-size:1.12rem;color:var(--navy);margin:6px 0 10px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .card ul{margin:10px 0 0 18px;color:var(--muted);font-size:.93rem}
+  .card li{margin-bottom:4px}
+
+  /* Accordion */
+  .acc{max-width:780px;margin:0 auto}
+  .acc-item{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+  .acc-btn{width:100%;text-align:left;background:none;border:0;padding:18px 22px;font-family:inherit;font-size:1.02rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .acc-btn .plus{font-size:1.4rem;color:var(--accent);transition:transform .3s;flex-shrink:0}
+  .acc-item.open .plus{transform:rotate(45deg)}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .acc-body div{padding:0 22px 18px;color:var(--muted)}
+
+  /* Links */
+  .links{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .link-card{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-decoration:none;color:inherit;transition:.25s}
+  .link-card:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-3px)}
+  .link-card .ic{width:44px;height:44px;border-radius:10px;background:var(--ice);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2)}
+  .link-card h4{color:var(--navy);font-size:1.02rem;margin-bottom:4px}
+  .link-card p{color:var(--muted);font-size:.9rem}
+  .link-card .arrow{margin-left:auto;color:var(--accent);font-weight:700}
+
+  /* Book */
+  .book{background:linear-gradient(135deg,var(--navy) 0%,#1b4a73 100%);color:#fff;text-align:center}
+  .book .sec-head h2{color:#fff}.book .sec-head p{color:rgba(255,255,255,.8)}
+  .book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto 36px;text-align:left}
+  .book-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:22px}
+  .book-box h4{margin-bottom:6px}.book-box p{color:rgba(255,255,255,.78);font-size:.93rem}
+  .contact{margin-top:22px;color:rgba(255,255,255,.8);font-size:.95rem}
+  .contact a{color:#fff;font-weight:600}
+
+  footer{background:#071523;color:rgba(255,255,255,.6);text-align:center;padding:26px 0;font-size:.88rem}
+  footer a{color:rgba(255,255,255,.85)}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* Back to top */
+  .to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:0;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.3s;font-size:1.2rem;z-index:40}
+  .to-top.show{opacity:1;pointer-events:auto}
+
+  @media (max-width:860px){
+    .menu-toggle{display:block}
+    .nav-links{position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(11,31,51,.98);max-height:0;overflow:hidden;transition:max-height .35s}
+    .nav-links.open{max-height:420px}
+    .nav-links li{width:100%;text-align:center}
+    .nav-links a{display:block;padding:15px}
+    .nav-links a.active::after{display:none}
+    .nav-links .btn-nav{margin:10px auto 18px;display:inline-block;padding:10px 26px}
+    header:not(.scrolled) nav{background:transparent}
+    .about{grid-template-columns:1fr;text-align:center}
+    .avatar{max-width:200px;margin:0 auto}
+    .chips{justify-content:center}
+    .cards,.book-grid{grid-template-columns:1fr}
+    .links{grid-template-columns:1fr}
+    section{padding:70px 0}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap">
+    <nav>
+      <a href="#home" class="logo" aria-label="Ski with Chuck home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f2a541" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-10 4 6 3-4 5 8z"/><path d="M8.2 11.3l.8 1.2 1.2-1"/></svg>
+        Ski with Chuck
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#lessons">Instruction</a></li>
+        <li><a href="#resources">Links</a></li>
+        <li><a href="#book" class="btn-nav">Book Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="stars"></div>
+  <svg class="mtns" viewBox="0 0 1440 500" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 330 L180 190 L300 270 L470 120 L640 280 L790 170 L960 300 L1120 150 L1290 260 L1440 200 L1440 500 L0 500Z" fill="#2e6496" opacity=".55"/>
+    <path d="M470 120 L520 165 L495 160 L470 185 L445 160 L425 160Z" fill="#fff" opacity=".85"/>
+    <path d="M1120 150 L1165 190 L1140 187 L1118 205 L1095 186 L1078 190Z" fill="#fff" opacity=".85"/>
+    <path d="M0 400 L240 260 L420 360 L620 230 L820 370 L1020 250 L1240 380 L1440 300 L1440 500 L0 500Z" fill="#dce9f5"/>
+    <path d="M620 230 L668 268 L640 264 L618 282 L596 262 L572 266Z" fill="#fff"/>
+    <path d="M0 450 C300 410 600 480 900 440 C1150 410 1300 450 1440 430 L1440 500 L0 500Z" fill="#fff"/>
+  </svg>
+  <div class="wrap hero-content">
+    <span class="eyebrow">Big Bear · Southern California</span>
+    <h1>Ski better, have more fun.</h1>
+    <p>Friendly, practical ski instruction for every level, from your first time on snow to carving clean turns on blue and black runs. Lessons in English or Spanish.</p>
+    <div class="btns">
+      <a href="#book" class="btn btn-primary">Book a Lesson</a>
+      <a href="#lessons" class="btn btn-ghost">Ski Tips</a>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="bar"></div><h2>About Chuck</h2></div>
+    <div class="about reveal">
+      <div class="avatar" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="38" cy="12" r="5"/><path d="M36 18l-8 12 10 6-4 12"/><path d="M28 30l-10 2"/><path d="M38 36l10-4"/><path d="M8 52l48-10"/><path d="M14 22l-4 30M52 20l-4 22"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Ski & Ride School Supervisor · PSIA Member</h3>
+        <p>I've spent seasons teaching and supervising at Big Bear Mountain Resort's Ski & Ride School, working with everyone from nervous first-timers to strong skiers chasing cleaner technique.</p>
+        <p>My approach is simple: look at what your skis are doing, find the one change that makes the biggest difference, and give you a drill you can feel right away. Lessons stay relaxed, safe, and focused on mileage.</p>
+        <div class="chips">
+          <span class="chip">PSIA Member</span>
+          <span class="chip">BBMR Ski & Ride School</span>
+          <span class="chip">English / Español</span>
+          <span class="chip">All Ages & Levels</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTION -->
+<section id="lessons" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="bar"></div><h2>Instruction</h2><p>Pick your level for the fundamentals I focus on, then try the drills next time you're on snow.</p></div>
+
+    <div class="tabs reveal" role="tablist">
+      <button class="tab active" data-tab="beginner" role="tab"><svg class="dot" viewBox="0 0 12 12"><circle cx="6" cy="6" r="6" fill="#2e9d52"/></svg>Beginner</button>
+      <button class="tab" data-tab="intermediate" role="tab"><svg class="dot" viewBox="0 0 12 12"><rect width="12" height="12" fill="#2b6fd6"/></svg>Intermediate</button>
+      <button class="tab" data-tab="advanced" role="tab"><svg class="dot" viewBox="0 0 12 12"><path d="M6 0l6 6-6 6-6-6z" fill="#111"/></svg>Advanced</button>
+    </div>
+
+    <div class="panel active" id="beginner">
+      <div class="cards">
+        <div class="card"><span class="num">Step 1</span><h4>Balance & Stance</h4><p>Stand tall and athletic: ankles, knees, and hips gently flexed, hands forward where you can see them.</p><ul><li>Feel your shins touching the boot tongues</li><li>Weight centered over the whole foot</li></ul></div>
+        <div class="card"><span class="num">Step 2</span><h4>Wedge & Speed Control</h4><p>Push your heels apart to make a small wedge. A bigger wedge slows you down; a smaller one lets you glide.</p><ul><li>Practice "pizza big, pizza small"</li><li>Stop with a wide, calm wedge</li></ul></div>
+        <div class="card"><span class="num">Step 3</span><h4>First Turns</h4><p>Turn by gently steering both feet and legs the way you want to go, not by twisting your shoulders.</p><ul><li>Look where you want to go</li><li>Link turns across the hill to control speed</li></ul></div>
+      </div>
+    </div>
+
+    <div class="panel" id="intermediate">
+      <div class="cards">
+        <div class="card"><span class="num">Focus 1</span><h4>Matching Your Skis</h4><p>Move from a wedge to parallel by bringing the inside ski parallel earlier in each turn.</p><ul><li>Shrink the wedge on easy terrain</li><li>Lighten the inside ski as you turn</li></ul></div>
+        <div class="card"><span class="num">Focus 2</span><h4>Pole Plant & Rhythm</h4><p>A light pole touch times your turns and keeps your upper body facing down the hill.</p><ul><li>Touch, turn, touch, turn</li><li>Keep hands in front, no big arm swings</li></ul></div>
+        <div class="card"><span class="num">Focus 3</span><h4>Edging Over Skidding</h4><p>Tip your skis on edge with your ankles and knees so they bend and carve instead of sliding sideways.</p><ul><li>Railroad-track drill on gentle groomers</li><li>Look back at your tracks: thin lines = edging</li></ul></div>
+      </div>
+    </div>
+
+    <div class="panel" id="advanced">
+      <div class="cards">
+        <div class="card"><span class="num">Refine 1</span><h4>Early Edge Engagement</h4><p>Start building edge angle at the top of the turn so the ski grips before the fall line, not after.</p><ul><li>Roll to new edges from the feet up</li><li>Shape a "C" turn, not a "Z"</li></ul></div>
+        <div class="card"><span class="num">Refine 2</span><h4>Separation & Angulation</h4><p>Let your legs turn under a quiet, downhill-facing upper body, and create angles to hold the edge.</p><ul><li>Hold a pole across your hips as a level</li><li>Outside ski does most of the work</li></ul></div>
+        <div class="card"><span class="num">Refine 3</span><h4>Versatility</h4><p>Adapt the same fundamentals to bumps, steeps, and variable snow by adjusting timing and pressure.</p><ul><li>Absorb bumps with flexion and extension</li><li>Short-radius turns on steeper pitches</li></ul></div>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:70px;margin-bottom:30px"><h2 style="font-size:1.6rem">Common Questions</h2></div>
+    <div class="acc reveal">
+      <div class="acc-item"><button class="acc-btn">What should I wear for my first lesson?<span class="plus">+</span></button><div class="acc-body"><div>Waterproof jacket and pants, layers underneath (no cotton), one pair of thin ski socks, gloves or mittens, goggles, and a helmet. Sunscreen too. The sun is strong at altitude.</div></div></div>
+      <div class="acc-item"><button class="acc-btn">Private or group lesson?<span class="plus">+</span></button><div class="acc-body"><div>Group lessons are a great value for beginners. Private lessons give you full attention and the fastest progress, especially if you're working on specific technique or want to ski with family or friends at the same level.</div></div></div>
+      <div class="acc-item"><button class="acc-btn">Do lessons include lift tickets or rentals?<span class="plus">+</span></button><div class="acc-body"><div>Not always. When booking through Big Bear Mountain Resort, check the lesson details and add a lift ticket and rentals to your cart at checkout if you need them.</div></div></div>
+      <div class="acc-item"><button class="acc-btn">¿Ofreces clases en español?<span class="plus">+</span></button><div class="acc-body"><div>¡Sí! Puedo dar clases en inglés o en español. Indícalo al reservar o escríbeme por correo.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKS -->
+<section id="resources">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="bar"></div><h2>Helpful Links</h2><p>Plan your day before you head up the mountain.</p></div>
+    <div class="links reveal">
+      <a class="link-card" href="https://www.bigbearmountainresort.com/buy/ski-snowboard-lessons" target="_blank" rel="noopener">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <div><h4>Book Ski & Snowboard Lessons</h4><p>Group and private lessons at Big Bear Mountain Resort.</p></div><span class="arrow">↗</span></a>
+      <a class="link-card" href="https://www.bigbearmountainresort.com" target="_blank" rel="noopener">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20l6-10 4 6 3-4 5 8z"/></svg></div>
+        <div><h4>Big Bear Mountain Resort</h4><p>Conditions, lift tickets, rentals, and mountain info.</p></div><span class="arrow">↗</span></a>
+      <a class="link-card" href="https://www.bigbearmountainresort.com/blog/parents-guide" target="_blank" rel="noopener">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 21v-2a5 5 0 0110 0v2M14 21v-1a3 3 0 016 0v1"/></svg></div>
+        <div><h4>Parents' Guide to BBMR</h4><p>Tips for getting kids on the slopes faster.</p></div><span class="arrow">↗</span></a>
+      <a class="link-card" href="https://www.thesnowpros.org" target="_blank" rel="noopener">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.5 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg></div>
+        <div><h4>PSIA-AASI (The Snow Pros)</h4><p>The Professional Ski Instructors of America.</p></div><span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book" class="book">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="bar"></div><h2>Ready to Ride?</h2><p>Lessons are booked through Big Bear Mountain Resort. Request me by name when you book a private lesson.</p></div>
+    <div class="book-grid reveal">
+      <div class="book-box"><h4>1. Choose a lesson</h4><p>Group (ages 5+) or private (ages 4+), ski or snowboard.</p></div>
+      <div class="book-box"><h4>2. Add tickets & rentals</h4><p>Lessons may not include a lift ticket. Add one at checkout.</p></div>
+      <div class="book-box"><h4>3. Sign your waiver</h4><p>Sign online ahead of time to speed up check-in.</p></div>
+    </div>
+    <a href="https://www.bigbearmountainresort.com/buy/ski-snowboard-lessons" target="_blank" rel="noopener" class="btn btn-primary reveal">Book Now at BBMR ↗</a>
+    <p class="contact reveal">Questions? Email <a href="mailto:chazmarv@gmail.com">chazmarv@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Chuck Marvin · Ski Instruction · Not affiliated with or endorsed by Big Bear Mountain Resort.</div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+  // Header style on scroll + back-to-top
+  const header = document.getElementById('header');
+  const toTop = document.getElementById('toTop');
+  function onScroll(){
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    toTop.classList.toggle('show', window.scrollY > 500);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    if (open) header.classList.add('scrolled'); else onScroll();
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); toggle.classList.remove('open'); toggle.setAttribute('aria-expanded', false); onScroll();
+  }));
+
+  // Active nav link by section
+  const sections = [...document.querySelectorAll('section[id]')];
+  const navAs = [...links.querySelectorAll('a')];
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(s => spy.observe(s));
+
+  // Reveal on scroll
+  const rev = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); rev.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => rev.observe(el));
+
+  // Level tabs
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x === t));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === t.dataset.tab));
+  }));
+
+  // FAQ accordion
+  document.querySelectorAll('.acc-item').forEach(item => {
+    const btn = item.querySelector('.acc-btn'), body = item.querySelector('.acc-body');
+    btn.addEventListener('click', () => {
+      const open = item.classList.toggle('open');
+      body.style.maxHeight = open ? body.scrollHeight + 'px' : 0;
+    });
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
